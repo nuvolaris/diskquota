@@ -19,7 +19,7 @@ function _main() {
     local tmp_dir="$(mktemp -d)"
     tar -xzf /home/gpadmin/bin_diskquota/diskquota-*-*.tar.gz -C "$tmp_dir"
     pushd "$tmp_dir"
-    ./install_gpdb_component
+        ./install_gpdb_component
     popd
 
     source /home/gpadmin/gpdb_src/gpAux/gpdemo/gpdemo-env.sh
@@ -28,7 +28,7 @@ function _main() {
         make -C src/test/isolation2 install
     popd
 
-    pushd /home/gpadmin/diskquota_artifacts
+    pushd /home/gpadmin/bin_diskquota
     # Show regress diff if test fails
     export SHOW_REGRESS_DIFF=1
     time cmake --build . --target installcheck
