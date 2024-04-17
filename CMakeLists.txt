@@ -16,7 +16,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Git.cmake)
 GitHash_Get(DISKQUOTA_GIT_HASH)
 
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Gpdb.cmake)
+#include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Gpdb.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Postgresdb.cmake)
 
 
 # set include directories for all sub-projects
@@ -85,7 +86,7 @@ set_target_properties(
              C_STANDARD 99
              LINKER_LANGUAGE "C")
 
-if (${GP_MAJOR_VERSION} STRGREATER_EQUAL "7")
+if (${PG_MAJORVERSION} STRGREATER_EQUAL "14")
   TARGET_LINK_LIBRARIES(diskquota ${PG_LIB_DIR}/libpq.so)
 endif()
 
@@ -160,8 +161,8 @@ BuildInfo_Create(${build_info_PATH}
   VARS
   DISKQUOTA_GIT_HASH
   DISKQUOTA_VERSION
-  GP_MAJOR_VERSION
-  GP_VERSION
+  PG_MAJORVERSION
+  PG_VERSION
   CMAKE_BUILD_TYPE)
 # Create build-info end
 

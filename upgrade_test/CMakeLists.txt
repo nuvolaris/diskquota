@@ -5,7 +5,7 @@ if(NOT DEFINED DISKQUOTA_DDL_CHANGE_CHECK)
     STRING "Skip the DDL updates check. Should not be disabled on CI" FORCE)
 endif()
 
-if (${GP_MAJOR_VERSION} EQUAL 6)
+if (${PG_MAJORVERSION} EQUAL 6)
 	list(APPEND schedule_files
 		${CMAKE_CURRENT_SOURCE_DIR}/schedule_1.0--2.0
 		${CMAKE_CURRENT_SOURCE_DIR}/schedule_2.0--1.0

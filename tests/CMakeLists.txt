@@ -2,7 +2,7 @@ include(${CMAKE_SOURCE_DIR}/cmake/Regress.cmake)
 
 list(APPEND isolation2_expected_DIR ${CMAKE_CURRENT_SOURCE_DIR}/isolation2/expected)
 list(APPEND regress_expected_DIR ${CMAKE_CURRENT_SOURCE_DIR}/regress/expected)
-if (${GP_MAJOR_VERSION} EQUAL 7)
+if (${PG_MAJORVERSION} EQUAL 14)
   list(APPEND isolation2_expected_DIR ${CMAKE_CURRENT_SOURCE_DIR}/isolation2/expected7)
   list(APPEND regress_expected_DIR ${CMAKE_CURRENT_SOURCE_DIR}/regress/expected7)
   # PLPYTHON_LANG_STR will be replaced by Regress.cmake

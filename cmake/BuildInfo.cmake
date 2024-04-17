@@ -4,12 +4,12 @@
 # ${CMAKE_CURRENT_BINARY_DIR}/build-info
 # VARS
 # DISKQUOTA_GIT_HASH
-# GP_MAJOR_VERSION)
+# PG_MAJORVERSION)
 # )
 # will create a build info file:
 # ❯ cat build-info
 # DISKQUOTA_GIT_HASH = 151ed92
-# GP_MAJOR_VERSION = 6
+# PG_MAJORVERSION = 14
 
 function(BuildInfo_Create path)
   cmake_parse_arguments(
